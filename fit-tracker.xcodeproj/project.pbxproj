@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323A90A92CD249320054CAC5 /* TrainingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */; };
+		323A90AA2CD249320054CAC5 /* TrainingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */; };
+		323A90AF2CD259D80054CAC5 /* TrainingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323A90AE2CD259D80054CAC5 /* TrainingHistory.swift */; };
 		32D6228E2CD224A9000C45B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6228D2CD224A9000C45B9 /* AppDelegate.swift */; };
 		32D622902CD224A9000C45B9 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 32D6228F2CD224A9000C45B9 /* Shaders.metal */; };
 		32D622932CD224A9000C45B9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D622922CD224A9000C45B9 /* Renderer.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		323A90AE2CD259D80054CAC5 /* TrainingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistory.swift; sourceTree = "<group>"; };
 		32D6228A2CD224A9000C45B9 /* fit-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fit-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D6228D2CD224A9000C45B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D6228F2CD224A9000C45B9 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -99,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		323A90A62CD249010054CAC5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */,
+				323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		323A90AD2CD259C80054CAC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				323A90AE2CD259D80054CAC5 /* TrainingHistory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32D622812CD224A9000C45B9 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +187,7 @@
 		32D622C12CD2263B000C45B9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				323A90A62CD249010054CAC5 /* Common */,
 				32D622DD2CD22973000C45B9 /* Splash */,
 				32D622DA2CD228B7000C45B9 /* Base */,
 				32D622CD2CD227E2000C45B9 /* Setting */,
@@ -177,6 +201,7 @@
 		32D622C62CD22671000C45B9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				323A90AD2CD259C80054CAC5 /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -348,6 +373,7 @@
 			files = (
 				32D622E12CD22991000C45B9 /* SplashViewController.storyboard in Resources */,
 				32D622D52CD2283B000C45B9 /* CalendarViewController.storyboard in Resources */,
+				323A90A92CD249320054CAC5 /* TrainingHistoryTableViewCell.xib in Resources */,
 				32D6229A2CD224AA000C45B9 /* Assets.xcassets in Resources */,
 				32D622D92CD22855000C45B9 /* SettingViewController.storyboard in Resources */,
 				32D622E32CD230CC000C45B9 /* HomeViewController.storyboard in Resources */,
@@ -384,8 +410,10 @@
 				32D622DC2CD228CA000C45B9 /* BaseViewController.swift in Sources */,
 				32D622D72CD22849000C45B9 /* SettingViewController.swift in Sources */,
 				32D622CF2CD2280D000C45B9 /* ManageMenuViewController.swift in Sources */,
+				323A90AF2CD259D80054CAC5 /* TrainingHistory.swift in Sources */,
 				32D622CA2CD2272D000C45B9 /* GetClassNameProtocol.swift in Sources */,
 				32D6228E2CD224A9000C45B9 /* AppDelegate.swift in Sources */,
+				323A90AA2CD249320054CAC5 /* TrainingHistoryTableViewCell.swift in Sources */,
 				32D622DF2CD22985000C45B9 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

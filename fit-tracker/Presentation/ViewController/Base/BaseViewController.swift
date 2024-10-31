@@ -20,6 +20,7 @@ class BaseViewController: UITabBarController, GetClassNameProtocol {
     private func setupBaseViewController() -> Void {
         // TabBar押下時の見た目セットアップ
         tabBar.tintColor = UIColor.darkGray
+        tabBar.backgroundColor = UIColor.systemBackground
         
         // ホーム画面タブ
         let homeSB = UIStoryboard(name: HomeViewController.className, bundle: nil)
@@ -45,10 +46,13 @@ class BaseViewController: UITabBarController, GetClassNameProtocol {
     // NavigationControllerとNavBarの見た目設定
     private func setUpNavBar(rootVC: UIViewController) -> UINavigationController {
         
-        let navigationController = UINavigationController()
+        let navigationController = UINavigationController(rootViewController: rootVC)
         
         let appearance = UINavigationBarAppearance()
+        // 背景を白に
         appearance.backgroundColor = UIColor.white
+        // NavBarの下線を削除
+        appearance.shadowColor = nil
         navigationController.navigationBar.scrollEdgeAppearance = appearance
         navigationController.navigationBar.standardAppearance = appearance
         

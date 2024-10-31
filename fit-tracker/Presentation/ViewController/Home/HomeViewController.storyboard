@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -8,25 +8,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--ホーム-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="fit_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-JC-Xee">
+                                <rect key="frame" x="20" y="59" width="353" height="710"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="hle-sn-9Qz" userLabel="ボタン用View">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="165"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-gm-TPu">
+                                            <rect key="frame" x="66.666666666666686" y="50" width="220" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="220" id="Nup-uY-4Pl"/>
+                                                <constraint firstAttribute="height" constant="45" id="UVE-2K-2eb"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="本日のトレーニングを追加">
+                                                <backgroundConfiguration key="background" cornerRadius="10">
+                                                    <color key="backgroundColor" red="0.84313725490000002" green="0.094117647060000004" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                </backgroundConfiguration>
+                                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                                <directionalEdgeInsets key="contentInsets" top="10" leading="20" bottom="10" trailing="20"/>
+                                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </buttonConfiguration>
+                                        </button>
+                                        <view contentMode="scaleToFill" id="WNZ-9v-QOV">
+                                            <rect key="frame" x="0.0" y="145" width="353" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日のトレーニング" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-2g-xU9">
+                                                    <rect key="frame" x="5" y="5" width="102" height="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="vgq-2g-xU9" firstAttribute="top" secondItem="WNZ-9v-QOV" secondAttribute="top" constant="5" id="7EH-qs-7vT"/>
+                                                <constraint firstAttribute="bottom" secondItem="vgq-2g-xU9" secondAttribute="bottom" constant="5" id="gcL-rf-PSS"/>
+                                                <constraint firstItem="vgq-2g-xU9" firstAttribute="leading" secondItem="WNZ-9v-QOV" secondAttribute="leading" constant="5" id="msh-b9-rWm"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="b2F-gm-TPu" firstAttribute="top" secondItem="hle-sn-9Qz" secondAttribute="top" constant="50" id="8co-UF-ZuH"/>
+                                        <constraint firstItem="b2F-gm-TPu" firstAttribute="centerX" secondItem="hle-sn-9Qz" secondAttribute="centerX" id="vmN-da-qRQ"/>
+                                        <constraint firstItem="WNZ-9v-QOV" firstAttribute="top" secondItem="b2F-gm-TPu" secondAttribute="bottom" constant="50" id="yAc-03-FCP"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="Zyw-JC-Xee" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="81M-dc-PN3"/>
+                            <constraint firstItem="Zyw-JC-Xee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="b2q-bm-Ige"/>
+                            <constraint firstItem="Zyw-JC-Xee" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sw6-9N-Ndb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zyw-JC-Xee" secondAttribute="trailing" constant="20" id="wSy-7L-UGq"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="house.fill" catalog="system" id="JKe-mp-eHY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Zyw-JC-Xee" id="ShC-Pr-e2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-2"/>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
