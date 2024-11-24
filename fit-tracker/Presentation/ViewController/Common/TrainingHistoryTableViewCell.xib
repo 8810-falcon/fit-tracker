@@ -72,6 +72,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="menuName" destination="8DS-lb-sk0" id="bND-WL-KcG"/>
+                <outlet property="setData" destination="lqt-R7-Tww" id="ng9-A9-MfH"/>
+                <outlet property="trainigPartLabel" destination="NnQ-Jy-JYN" id="ccY-B2-CdK"/>
+                <outlet property="trainingPartView" destination="qbS-qn-vnk" id="dbr-pR-yLV"/>
+            </connections>
             <point key="canvasLocation" x="40.458015267175568" y="33.098591549295776"/>
         </tableViewCell>
     </objects>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeViewController: UIViewController, GetClassNameProtocol {
     
@@ -18,6 +19,54 @@ class HomeViewController: UIViewController, GetClassNameProtocol {
         super.viewDidLoad()
         
         configureNavBar()
+        // Mockデータセット
+        createMockData()
+        
+        configureTableView()
+    }
+    
+    // TODO: 消す
+    private func createMockData() {
+        
+        let history1 = TrainingHistory(
+            part: "胸",
+            trainingMenuList: [
+                TrainingHistory.TrainingMenu(
+                    trainingMenuName: "ベンチプレス",
+                    trainingSetList: [
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 70.0, rep: 8),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 65.0, rep: 8),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 60.0, rep: 12),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 60.0, rep: 10),
+                    ]
+                ),
+                TrainingHistory.TrainingMenu(
+                    trainingMenuName: "インクラインプレス",
+                    trainingSetList: [
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 65.0, rep: 8),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 60.0, rep: 7),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 50.0, rep: 10),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 55.0, rep: 12),
+                    ]
+                )
+            ]
+        )
+        data.append(history1)
+        let history2 = TrainingHistory(
+            part: "脚",
+            trainingMenuList: [
+                TrainingHistory.TrainingMenu(
+                    trainingMenuName: "スクワット",
+                    trainingSetList: [
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 100.0, rep: 8),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 80.0, rep: 8),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 70.0, rep: 12),
+                        TrainingHistory.TrainingMenu.TrainingSet(weight: 60.0, rep: 10),
+                    ]
+                )
+            ]
+        )
+        data.append(history2)
     }
     
     private func configureNavBar() {
@@ -51,10 +100,23 @@ class HomeViewController: UIViewController, GetClassNameProtocol {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrainingHistoryTableViewCell.className) as? TrainingHistoryTableViewCell ?? {
+            assertionFailure("登録済みのセルが取得できない")
+            return TrainingHistoryTableViewCell()
+        }()
+
+        // セルに情報をセット
+        
+        
+        // トレーニングメニューごとに並び替え
+        let sortedListByTrainingMenu = data[indexPath.row].trainingMenuList.sorted { $0.trainingMenuName < $1.trainingMenuName }
+        print("ソートしたトレーニングリスト \(sortedListByTrainingMenu)")
+        
+        return cell
     }
 }
