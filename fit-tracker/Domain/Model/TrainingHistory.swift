@@ -9,26 +9,20 @@ import Foundation
 
 struct TrainingHistory {
     
-    // トレーニング部位
-    var part: String
+    // トレーニングメニュー名
+    let trainingMenuName: String
     
-    // トレーニングメニューリスト
-    var trainingMenuList: [TrainingMenu]
+    // トレーニング実施日YYYYMMDD
+    let trainingDate: String
     
-    struct TrainingMenu {
+    // トレーニングセット
+    var trainingSetList: [TrainingSet]
+    
+    struct TrainingSet {
+        // 重量
+        var weight: Double
         
-        // トレーニングメニュー名
-        var trainingMenuName: String
-        
-        // トレーニングセット
-        var trainingSetList: [TrainingSet]
-        
-        struct TrainingSet {
-            // 重量
-            var weight: Double
-            
-            // 回数
-            var rep: Int
-        }
+        // 回数
+        var rep: Int
     }
 }

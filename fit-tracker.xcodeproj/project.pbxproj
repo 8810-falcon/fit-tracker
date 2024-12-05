@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3201322E2CF30D8D009F4777 /* TrainingSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201322C2CF30D8D009F4777 /* TrainingSetTableViewCell.swift */; };
+		3201322F2CF30D8D009F4777 /* TrainingSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3201322D2CF30D8D009F4777 /* TrainingSetTableViewCell.xib */; };
 		323A90A92CD249320054CAC5 /* TrainingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */; };
 		323A90AA2CD249320054CAC5 /* TrainingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */; };
 		323A90AF2CD259D80054CAC5 /* TrainingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323A90AE2CD259D80054CAC5 /* TrainingHistory.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3201322C2CF30D8D009F4777 /* TrainingSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSetTableViewCell.swift; sourceTree = "<group>"; };
+		3201322D2CF30D8D009F4777 /* TrainingSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingSetTableViewCell.xib; sourceTree = "<group>"; };
 		323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		323A90AE2CD259D80054CAC5 /* TrainingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistory.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			children = (
 				323A90A72CD249320054CAC5 /* TrainingHistoryTableViewCell.swift */,
 				323A90A82CD249320054CAC5 /* TrainingHistoryTableViewCell.xib */,
+				3201322C2CF30D8D009F4777 /* TrainingSetTableViewCell.swift */,
+				3201322D2CF30D8D009F4777 /* TrainingSetTableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3201322F2CF30D8D009F4777 /* TrainingSetTableViewCell.xib in Resources */,
 				32D622E12CD22991000C45B9 /* SplashViewController.storyboard in Resources */,
 				32D622D52CD2283B000C45B9 /* CalendarViewController.storyboard in Resources */,
 				323A90A92CD249320054CAC5 /* TrainingHistoryTableViewCell.xib in Resources */,
@@ -406,6 +413,7 @@
 				32D622C32CD2265B000C45B9 /* HomeViewController.swift in Sources */,
 				32D622902CD224A9000C45B9 /* Shaders.metal in Sources */,
 				32D622932CD224A9000C45B9 /* Renderer.swift in Sources */,
+				3201322E2CF30D8D009F4777 /* TrainingSetTableViewCell.swift in Sources */,
 				32D622952CD224A9000C45B9 /* ViewController.swift in Sources */,
 				32D622DC2CD228CA000C45B9 /* BaseViewController.swift in Sources */,
 				32D622D72CD22849000C45B9 /* SettingViewController.swift in Sources */,

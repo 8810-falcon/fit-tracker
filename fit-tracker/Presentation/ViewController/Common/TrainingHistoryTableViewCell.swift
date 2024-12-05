@@ -9,46 +9,15 @@ import UIKit
 
 class TrainingHistoryTableViewCell: UITableViewCell, GetClassNameProtocol {
     
-    // 部位表示用View
-    @IBOutlet weak var trainingPartView: UIView!
-    // 部位
-    @IBOutlet weak var trainigPartLabel: UILabel!
-    // メニュー名
-    @IBOutlet weak var menuName: UILabel!
-    // セット情報
-    @IBOutlet weak var setData: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuLabel: UILabel!
     
-    /// トレーニング履歴セル種別
-    enum CellType {
-        /// 部位見出しあり、メニュー名あり
-        case withBodyPart
-        /// 部位見出しなし、メニュー名あり
-        case withMenuName
-        /// 部位見出しなし、メニュー名なし
-        case withoutMenuName
-    }
-    
-    /// トレーニング履歴セル用のViewModel
-    struct TrainingHistoryCellModel {
-        /// 部位
-        let part: String
-        /// メニュー名
-        let menuName: String
-        /// 重さ
-        private let weight: Double
-        /// 回数
-        private let rep: Int
-        /// セット情報（表示用）
-        var setData: String {
-            return "\(weight)kg × \(rep)reps"
-        }
-        /// トレーニング履歴セル種別
-        let cellType: CellType
-    }
+    private var data: [TrainingHistory.TrainingSet] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        configureTableView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,20 +26,49 @@ class TrainingHistoryTableViewCell: UITableViewCell, GetClassNameProtocol {
         // Configure the view for the selected state
     }
     
-    func configureCell(cellModel: TrainingHistoryCellModel) {
-        
-        switch cellModel.cellType {
-        case .withBodyPart:
-            self.trainigPartLabel.text = cellModel.part
-            self.menuName.text = cellModel.menuName
-        case .withMenuName:
-            self.trainingPartView.isHidden = true
-            self.menuName.text = cellModel.menuName
-        case .withoutMenuName:
-            self.trainigPartLabel.isHidden = true
-            self.menuName.isHidden = true
-        }
-        self.setData.text = cellModel.setData
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // 子テーブルビューの状態をリセット
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        tableView.reloadData()
     }
     
+    func configureTableView() {
+        
+        tableView.isScrollEnabled = false
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: TrainingSetTableViewCell.className, bundle: nil), forCellReuseIdentifier: TrainingSetTableViewCell.className)
+    }
+    
+    func configureCell(dataForCell: TrainingHistory) {
+        
+        menuLabel.text = dataForCell.trainingMenuName
+        self.data = dataForCell.trainingSetList
+        print(self.data)
+        self.tableView.reloadData()
+    }
+}
+
+extension TrainingHistoryTableViewCell: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(data.count)
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrainingSetTableViewCell.className) as? TrainingSetTableViewCell ?? {
+            assertionFailure("登録済みのセルが取得できない")
+            return TrainingSetTableViewCell()
+        }()
+        
+        cell.configureCell(dataForCell: data[indexPath.row], count: indexPath.row)
+        print("セル更新")
+        return cell
+    }
 }
